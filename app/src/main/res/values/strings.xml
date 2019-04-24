@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ComprApp4.0</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="Comprapp">ComprApp</string>
+    <string name="nav_header_subtitle">By The object mentors</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="Inventario">Inventario</string>
+    <string name="Productos">Productos</string>
+    <string name="Listas">Listas</string>
+    <string name="CompraDelMes">Compra del mes</string>
+    <string name="Escanear">Escanear</string>
+    <string name="Configuracion">Configuracion</string>
+    <string name="Reset">Reset</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
