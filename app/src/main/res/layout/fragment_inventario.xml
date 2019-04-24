@@ -69,7 +69,7 @@
                 android:layout_weight="1" />
 
             <ImageButton
-                android:id="@+id/addButton"
+                android:id="@+id/addInventarioButton"
                 android:layout_width="125dp"
                 android:layout_height="123dp"
                 android:layout_weight="1"
