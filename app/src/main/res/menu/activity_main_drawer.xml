@@ -8,11 +8,11 @@
             <menu>
                 <item
                     android:id="@+id/nav_inventario"
-                    android:icon="@drawable/ic_menu_gallery"
+                    android:icon="@drawable/ic_baseline_kitchen_24px"
                     android:title="@string/Inventario" />
                 <item
                     android:id="@+id/nav_productos"
-                    android:icon="@drawable/ic_menu_gallery"
+                    android:icon="@drawable/ic_baseline_shopping_cart_24px"
                     android:title="@string/Productos" />
             </menu>
         </item>
@@ -21,11 +21,11 @@
             <menu>
                 <item
                     android:id="@+id/nav_listas"
-                    android:icon="@drawable/ic_menu_gallery"
+                    android:icon="@drawable/ic_baseline_list_24px"
                     android:title="@string/Listas" />
                 <item
                     android:id="@+id/nav_compraDelMes"
-                    android:icon="@drawable/ic_menu_share"
+                    android:icon="@drawable/ic_baseline_calendar_today_24px"
                     android:title="@string/CompraDelMes" />
                 <item
                     android:id="@+id/nav_escanear"
@@ -42,7 +42,7 @@
                 android:title="@string/Configuracion" />
             <item
                 android:id="@+id/nav_reset"
-                android:icon="@drawable/ic_menu_slideshow"
+                android:icon="@drawable/ic_baseline_restore_24px"
                 android:title="@string/Reset" />
         </menu>
     </item>
