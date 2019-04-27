@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 public class Inventario extends Fragment {
 
     Nevera nevera;
+    NuevoInventario nuevoInventario;
 
     public Inventario() {
         // Required empty public constructor
@@ -31,8 +32,13 @@ public class Inventario extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Nuevo inventario", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                /*nuevoInventario = new NuevoInventario();
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.frame, nuevoInventario, "Nuevo inventario");
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();*/
             }
         });
         return vista;
@@ -40,9 +46,11 @@ public class Inventario extends Fragment {
 
         //no funciona
     public void OnClickNevera(View view){
-        /*FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        nevera = new Nevera();
+
+        /*nevera = new Nevera();
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frame, nevera, "Productos Nevera");
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();*/
     }
 }
