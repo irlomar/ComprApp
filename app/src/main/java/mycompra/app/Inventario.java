@@ -49,8 +49,6 @@ public class Inventario extends Fragment {
 
         /*nevera = new Nevera();
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frame, nevera, "Productos Nevera");
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();*/
+        fragmentTransaction.replace(R.id.frame, nevera, "Nuevo inventario").addToBackStack(null).commit();*/
     }
 }

@@ -5,38 +5,23 @@
     android:layout_height="match_parent"
     tools:context=".Productos">
 
-    <!-- TODO: Update blank fragment layout -->
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
 
-        <Space
-            android:layout_width="25dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
+        <android.support.v7.widget.RecyclerView
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+            android:id="@+id/RecyclerIdProd"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="72dp">
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/Productos" />
-
-            <android.support.v7.widget.RecyclerView
-
-                android:id="@+id/RecyclerIdProd"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="20dp"/>
-
-        </LinearLayout>
     </LinearLayout>
 
 </FrameLayout>
