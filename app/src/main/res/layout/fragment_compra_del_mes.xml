@@ -116,7 +116,7 @@
                     android:id="@+id/buttonVerTickets"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Button" />
+                    android:text="Ver tickets" />
 
             </LinearLayout>
         </LinearLayout>

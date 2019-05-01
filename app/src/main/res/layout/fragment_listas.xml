@@ -33,10 +33,14 @@
             android:layout_height="65dp"
             android:text="Compartidas" />
 
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="match_parent"
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/buttonNuevaLista"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_input_add" />
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:backgroundTint="#ACF76F"
+            app:srcCompat="@drawable/ic_baseline_control_point_24px" />
+
     </LinearLayout>
 </FrameLayout>

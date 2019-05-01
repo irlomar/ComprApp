@@ -195,12 +195,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
-            <ImageButton
-                android:id="@+id/imageButton3"
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/eliminarProducto_listaH"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@android:drawable/ic_menu_delete" />
+                android:layout_gravity="bottom|end"
+                android:layout_margin="@dimen/fab_margin"
+                android:backgroundTint="#F76F8F"
+                app:srcCompat="@drawable/ic_baseline_delete_24px" />
 
             <Space
                 android:layout_width="35dp"
@@ -219,12 +221,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
-            <ImageButton
-                android:id="@+id/imageButton5"
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/nuevoProducto_listaH"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@android:drawable/ic_input_add" />
+                android:layout_gravity="bottom|end"
+                android:layout_margin="@dimen/fab_margin"
+                android:backgroundTint="#ACF76F"
+                app:srcCompat="@drawable/ic_baseline_control_point_24px" />
 
             <Space
                 android:layout_width="wrap_content"
