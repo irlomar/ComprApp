@@ -36,150 +36,20 @@
             android:layout_width="match_parent"
             android:layout_height="40dp" />
 
-        <TableLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TableRow
+            <android.support.v7.widget.RecyclerView
+
+                android:id="@+id/RecyclerListaHabitualId"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp" />
+        </LinearLayout
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <Space
-                        android:layout_width="25dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" />
-
-                    <CheckBox
-                        android:id="@+id/checkBoxProd1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Producto1" />
-
-                    <Space
-                        android:layout_width="35dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" />
-
-                    <TextView
-                        android:id="@+id/textCategoria1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Categoria1" />
-                </LinearLayout>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <Space
-                        android:layout_width="25dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" />
-
-                    <CheckBox
-                        android:id="@+id/checkBoxProd2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Producto2" />
-
-                    <Space
-                        android:layout_width="35dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" />
-
-                    <TextView
-                        android:id="@+id/textCategoria2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Categoria2" />
-                </LinearLayout>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <Space
-                        android:layout_width="25dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" />
-
-                    <CheckBox
-                        android:id="@+id/checkBoxProd3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Producto3" />
-
-                    <Space
-                        android:layout_width="35dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" />
-
-                    <TextView
-                        android:id="@+id/textCatregoria1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Categoria1" />
-                </LinearLayout>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <Space
-                        android:layout_width="25dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" />
-
-                    <CheckBox
-                        android:id="@+id/checkBoxProd4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Producto4" />
-
-                    <Space
-                        android:layout_width="35dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" />
-
-                    <TextView
-                        android:id="@+id/textCategoria3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Categoria3" />
-                </LinearLayout>
-            </TableRow>
-        </TableLayout>
+        >
 
         <Space
             android:layout_width="match_parent"

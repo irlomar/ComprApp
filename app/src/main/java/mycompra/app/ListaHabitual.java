@@ -6,15 +6,24 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+
+import java.util.ArrayList;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class ListaHabitual extends Fragment {
+
+    RecyclerView recycler;
+    ArrayList<String> listCategoria;
+    ArrayList<CheckBox> listCheckBox;
 
     public ListaHabitual() {
         // Required empty public constructor
@@ -26,6 +35,17 @@ public class ListaHabitual extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View vista = inflater.inflate(R.layout.fragment_lista_habitual, container, false);
+
+        recycler= vista.findViewById(R.id.RecyclerListaHabitualId);
+        recycler.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        llenarLista();
+
+        AdapterListaHabitual adapter = new AdapterListaHabitual(listCategoria,listCheckBox);
+
+        recycler.setAdapter(adapter);
+
+
         FloatingActionButton eliminarProd = vista.findViewById(R.id.eliminarProducto_listaH);
         eliminarProd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,5 +67,15 @@ public class ListaHabitual extends Fragment {
         });
 
         return vista;
+    }
+
+    private void llenarLista() {
+        listCategoria = new ArrayList<String>();
+        listCheckBox = new ArrayList<CheckBox>();
+
+        for(int i = 0; i < 10; i++){
+            listCategoria.add("Categoria" + i);
+            //listCheckBox.add(new CheckBox().setText("Producto" + i));
+        }
     }
 }

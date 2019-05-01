@@ -42,11 +42,14 @@
             android:layout_marginLeft="25dp"/>
 
 
-        <ImageButton
-            android:id="@+id/imageButton6"
-            android:layout_width="match_parent"
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/eliminarProducto_nevera"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_delete" />
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:backgroundTint="#F76F8F"
+            app:srcCompat="@drawable/ic_baseline_delete_24px" />
 
     </LinearLayout>
 
