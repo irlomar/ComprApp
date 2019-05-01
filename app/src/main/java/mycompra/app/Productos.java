@@ -2,6 +2,8 @@ package mycompra.app;
 
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -40,6 +42,15 @@ public class Productos extends Fragment {
         AdapterProductos adapter = new AdapterProductos(listDatosProd,listProduct,listCatProd);
 
         recyclerView.setAdapter(adapter);
+
+        FloatingActionButton buttonNuevosPoductos = view.findViewById(R.id.buttonNuevoProducto_prod);
+        buttonNuevosPoductos.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Snackbar.make(view, "Nuevo producto", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+
         return view;
     }
 
