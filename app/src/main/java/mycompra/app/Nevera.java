@@ -49,8 +49,8 @@ public class Nevera extends Fragment {
         FloatingActionButton eliminar_prodNevera = view.findViewById(R.id.eliminarProducto_nevera);
         eliminar_prodNevera.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Snackbar.make(view, "Eliminar producto", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                /*Snackbar.make(view, "Eliminar producto", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();*/
             }
         });
 

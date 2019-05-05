@@ -6,41 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".Listas">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <Space
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="72dp" />
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="72dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/buttonListaHabitual"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:text="Habitual" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/RecyclerIdListas"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-        <Button
-            android:id="@+id/buttonListaCustomizada"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:text="Customizada" />
+        </LinearLayout>
+    </ScrollView>
 
-        <Button
-            android:id="@+id/buttonListaCompartida"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:text="Compartidas" />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/buttonNuevaLista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:backgroundTint="#ACF76F"
+        app:srcCompat="@drawable/ic_baseline_control_point_24px" />
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/buttonNuevaLista"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="@dimen/fab_margin"
-            android:backgroundTint="#ACF76F"
-            app:srcCompat="@drawable/ic_baseline_control_point_24px" />
-
-    </LinearLayout>
 </FrameLayout>
