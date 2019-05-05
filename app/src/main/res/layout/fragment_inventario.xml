@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/idFragmentInventario"
     tools:context=".Inventario">
 
     <LinearLayout
@@ -30,8 +31,7 @@
                 android:layout_width="125dp"
                 android:layout_height="123dp"
                 android:layout_weight="1"
-                android:text="nevera"
-                android:onClick="OnClickNevera"/>
+                android:text="nevera" />
 
             <Space
                 android:layout_width="21dp"

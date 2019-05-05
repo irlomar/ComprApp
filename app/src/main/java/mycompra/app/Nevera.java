@@ -5,11 +5,13 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
@@ -42,6 +44,7 @@ public class Nevera extends Fragment {
         AdapterNevera adapter = new AdapterNevera(listDatos,listProd,listCat);
 
         recycler.setAdapter(adapter);
+
 
         FloatingActionButton eliminar_prodNevera = view.findViewById(R.id.eliminarProducto_nevera);
         eliminar_prodNevera.setOnClickListener(new View.OnClickListener() {

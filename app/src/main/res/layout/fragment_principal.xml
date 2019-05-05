@@ -44,7 +44,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Por favor, seleccione una de las opciones para empezar"
-                android:layout_marginBottom="300dp"/>
+                android:layout_marginBottom="300dp"
+                android:layout_marginRight="10dp"/>
         </LinearLayout>
     </LinearLayout>
 

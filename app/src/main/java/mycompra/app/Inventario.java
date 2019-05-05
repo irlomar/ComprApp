@@ -1,14 +1,17 @@
 package mycompra.app;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 /**
@@ -16,7 +19,6 @@ import android.view.ViewGroup;
  */
 public class Inventario extends Fragment {
 
-    Nevera nevera;
     NuevoInventario nuevoInventario;
 
     public Inventario() {
@@ -27,28 +29,33 @@ public class Inventario extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View vista = inflater.inflate(R.layout.fragment_inventario, container, false);
-        FloatingActionButton fab = vista.findViewById(R.id.fab);
+
+        Button btnNevera = (Button) vista.findViewById(R.id.buttonNevera);
+        btnNevera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.frame,new Nevera());
+                ft.commit();
+            }
+        });
+
+
+        FloatingActionButton fab = (FloatingActionButton) vista.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Nuevo inventario", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                /*nuevoInventario = new NuevoInventario();
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.frame, nuevoInventario, "Nuevo inventario");
-                fragmentTransaction.addToBackStack(null);
+                /*Snackbar.make(view, "Nuevo inventario", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();*/
+
+                /*FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.add(R.id.frame, new NuevoInventario());
                 fragmentTransaction.commit();*/
             }
         });
         return vista;
     }
 
-        //no funciona
-    public void OnClickNevera(View view){
-
-        /*nevera = new Nevera();
-        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frame, nevera, "Nuevo inventario").addToBackStack(null).commit();*/
-    }
 }
