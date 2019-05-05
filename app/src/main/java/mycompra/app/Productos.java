@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -46,8 +47,11 @@ public class Productos extends Fragment {
         FloatingActionButton buttonNuevosPoductos = view.findViewById(R.id.buttonNuevoProducto_prod);
         buttonNuevosPoductos.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Snackbar.make(view, "Nuevo producto", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                /*Snackbar.make(view, "Nuevo producto", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();*/
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.frame,new NuevoProducto());
+                ft.commit();
             }
         });
 

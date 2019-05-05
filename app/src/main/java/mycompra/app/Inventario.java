@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 /**
@@ -42,19 +43,19 @@ public class Inventario extends Fragment {
             }
         });
 
-
+        //No va
         FloatingActionButton fab = (FloatingActionButton) vista.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                /*Snackbar.make(view, "Nuevo inventario", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();*/
-
-                /*FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.add(R.id.frame, new NuevoInventario());
-                fragmentTransaction.commit();*/
+            public void onClick(View v) {
+                FragmentTransaction fr = getFragmentManager().beginTransaction();
+                fr.replace(R.id.frame,new NuevoInventario());
+                fr.commit();
             }
         });
+
+
+
         return vista;
     }
 

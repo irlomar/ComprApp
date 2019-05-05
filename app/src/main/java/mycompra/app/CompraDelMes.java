@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toolbar;
 
 
 /**
@@ -25,7 +26,7 @@ public class CompraDelMes extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View vista = inflater.inflate(R.layout.fragment_compra_del_mes, container, false);
+        final View vista = inflater.inflate(R.layout.fragment_compra_del_mes, container, false);
         Button btnTicketsMes = (Button) vista.findViewById(R.id.buttonVerTickets);
         btnTicketsMes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +35,7 @@ public class CompraDelMes extends Fragment {
                 ft.replace(R.id.frame,new TicketsDelMes());
                 ft.commit();
             }
+
         });
 
         return vista;
