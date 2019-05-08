@@ -9,21 +9,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <Space
-            android:layout_width="150dp"
-            android:layout_height="72dp" />
+        android:orientation="vertical"
+        android:layout_marginTop="72dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="25dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <Space
-                android:layout_width="25dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+            android:orientation="horizontal"
+            android:layout_marginBottom="15dp">
 
             <TextView
                 android:id="@+id/textView13"
@@ -32,14 +27,11 @@
                 android:text="Lista habitual" />
         </LinearLayout>
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="40dp" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginBottom="20dp">
 
             <android.support.v7.widget.RecyclerView
 
@@ -51,19 +43,10 @@
 
         >
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="45dp" />
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
-
-            <Space
-                android:layout_width="25dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
 
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/eliminarProducto_listaH"
@@ -71,25 +54,18 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"
                 android:layout_margin="@dimen/fab_margin"
+                android:layout_marginRight="20dp"
                 android:backgroundTint="#F76F8F"
                 app:srcCompat="@drawable/ic_baseline_delete_24px" />
-
-            <Space
-                android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
 
             <ImageButton
                 android:id="@+id/imageButton4"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:layout_weight="1"
                 android:src="@drawable/ic_menu_camera" />
-
-            <Space
-                android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
 
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/nuevoProducto_listaH"
@@ -97,13 +73,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"
                 android:layout_margin="@dimen/fab_margin"
+                android:layout_marginLeft="20dp"
                 android:backgroundTint="#ACF76F"
                 app:srcCompat="@drawable/ic_baseline_control_point_24px" />
 
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
         </LinearLayout>
 
     </LinearLayout>

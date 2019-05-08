@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
         setTitle("Principal");
         Principal fragment = new Principal();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -105,14 +106,12 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.commit();
         } else if (id == R.id.nav_escanear) {
 
-        } else if (id == R.id.nav_configuracion) {
-            setTitle("Configuracion");
-            Configuracion fragment = new Configuracion();
+        } else if (id == R.id.nav_Home) {
+            setTitle("Principal");
+            Principal fragment = new Principal();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frame, fragment, "Configuracion");
+            fragmentTransaction.replace(R.id.frame, fragment, "Principal");
             fragmentTransaction.commit();
-        }else if (id == R.id.nav_reset) {
-
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

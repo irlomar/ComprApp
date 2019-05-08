@@ -34,16 +34,12 @@
             </menu>
          </item>
 
-    <item android:title="Ajustes">
+    <item android:title="">
         <menu>
             <item
-                android:id="@+id/nav_configuracion"
-                android:icon="@drawable/ic_menu_manage"
-                android:title="@string/Configuracion" />
-            <item
-                android:id="@+id/nav_reset"
-                android:icon="@drawable/ic_baseline_restore_24px"
-                android:title="@string/Reset" />
+                android:id="@+id/nav_Home"
+                android:icon="@drawable/ic_baseline_home_24px"
+                android:title="@string/Pantalla_Principal" />
         </menu>
     </item>
     </group>
