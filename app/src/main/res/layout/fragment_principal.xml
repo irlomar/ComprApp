@@ -7,46 +7,39 @@
     tools:context=".Principal">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_marginLeft="25dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginRight="25dp"
+        android:orientation="vertical">
 
-        <Space
-            android:layout_width="25dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
-        <LinearLayout
+        <ImageView
+            android:id="@+id/imageView2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="350dp"
+            android:src="@mipmap/ic_logoaplicacion" />
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.1"
-                android:src="@mipmap/ic_logoaplicacion" />
+        <Button
+            android:id="@+id/btnListPrincipalId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Listas de la compra" />
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Bienvenidx!"
-                android:textAlignment="center" />
+        <Button
+            android:id="@+id/btnEscPrincId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Escaner"
+            android:layout_marginBottom="10dp"/>
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btnInventPrincId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Inventario" />
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Por favor, seleccione una de las opciones para empezar"
-                android:layout_marginBottom="300dp"
-                android:layout_marginRight="10dp"/>
-        </LinearLayout>
     </LinearLayout>
 
 </FrameLayout>

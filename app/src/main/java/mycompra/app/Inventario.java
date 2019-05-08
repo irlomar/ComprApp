@@ -43,7 +43,7 @@ public class Inventario extends Fragment {
             }
         });
 
-        //No va
+
         FloatingActionButton fab = (FloatingActionButton) vista.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
