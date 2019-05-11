@@ -78,7 +78,6 @@ public class ListaHabitual extends Fragment {
 
         for(int i = 0; i < 10; i++){
             listCategoria.add("Categoria" + i);
-            //listCheckBox.add(new CheckBox().setText("Producto" + i));
         }
     }
 }
