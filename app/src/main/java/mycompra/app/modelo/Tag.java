@@ -1,24 +1,24 @@
 package mycompra.app.modelo;
 
-public class Categoria {
+public class Tag {
 
-    public static final String TABLE = "Categoria";
+    public static final String TABLE = "Tag";
 
     public static final String KEY_ID = "id";
     public static final String KEY_Nombre = "nombre";
-    public static final String KEY_ID_Inventario = "idInventario";
+    public static final String KEY_ID_Categoria = "idCategoria";
 
     private int id;
     private String nombre;
-    private int idInventario;
+    private int idCategoria;
 
-    public Categoria(){
+    public Tag(){
     }
 
-    public Categoria(int id, String nombre, int idInventario){
+    public Tag(int id, String nombre, int idCategoria){
         this.id = id;
         this.nombre = nombre;
-        this.idInventario = idInventario;
+        this.idCategoria = idCategoria;
     }
 
     public int getId() {
@@ -37,11 +37,11 @@ public class Categoria {
         this.nombre = nombre;
     }
 
-    public int getIdInventario() {
-        return idInventario;
+    public int getIdCategoria() {
+        return idCategoria;
     }
 
-    public void setIdInventario(int idInventario) {
-        this.idInventario = idInventario;
+    public void setIdCategoria(int idCategoria) {
+        this.idCategoria = idCategoria;
     }
 }

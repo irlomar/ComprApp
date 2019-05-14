@@ -24,6 +24,7 @@ public class CategoriaDAO {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(Categoria.KEY_Nombre, categoria.getNombre());
+        values.put(Categoria.KEY_ID_Inventario, categoria.getIdInventario());
 
         long idCategoria = db.insert(Categoria.TABLE, null, values);
         db.close();
@@ -42,6 +43,7 @@ public class CategoriaDAO {
         ContentValues values = new ContentValues();
 
         values.put(Categoria.KEY_Nombre, categoria.getNombre());
+        values.put(Categoria.KEY_ID_Inventario, categoria.getIdInventario());
 
         db.update(Categoria.TABLE, values, Categoria.KEY_ID + "= ?", new String[]{String.valueOf(categoria.getId())});
         db.close();
@@ -51,7 +53,8 @@ public class CategoriaDAO {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         String selectQuery =  "SELECT  " +
                 Categoria.KEY_ID + "," +
-                Categoria.KEY_Nombre +
+                Categoria.KEY_Nombre + "," +
+                Categoria.KEY_ID_Inventario +
                 " FROM " + Categoria.TABLE
                 + " WHERE " +
                 Categoria.KEY_ID + "=?";
@@ -64,6 +67,7 @@ public class CategoriaDAO {
             do {
                 categoria.setId(cursor.getInt(cursor.getColumnIndex(Categoria.KEY_ID)));
                 categoria.setNombre(cursor.getString(cursor.getColumnIndex(Categoria.KEY_Nombre)));
+                categoria.setIdInventario(cursor.getInt(cursor.getColumnIndex(Categoria.KEY_ID_Inventario)));
             } while (cursor.moveToNext());
         }
         cursor.close();
@@ -75,7 +79,8 @@ public class CategoriaDAO {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         String selectQuery =  "SELECT  " +
                 Categoria.KEY_ID + "," +
-                Categoria.KEY_Nombre +
+                Categoria.KEY_Nombre + "," +
+                Categoria.KEY_ID_Inventario +
                 " FROM " + Categoria.TABLE;
 
         ArrayList<Categoria> categoriaList = new ArrayList<>();
@@ -87,6 +92,7 @@ public class CategoriaDAO {
                 Categoria categoria = new Categoria();
                 categoria.setId(cursor.getInt(cursor.getColumnIndex(Categoria.KEY_ID)));
                 categoria.setNombre(cursor.getString(cursor.getColumnIndex(Categoria.KEY_Nombre)));
+                categoria.setIdInventario(cursor.getInt(cursor.getColumnIndex(Categoria.KEY_ID_Inventario)));
                 categoriaList.add(categoria);
             } while (cursor.moveToNext());
         }
