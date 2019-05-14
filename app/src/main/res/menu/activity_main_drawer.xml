@@ -4,8 +4,6 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item android:title="Elementos">
-            <menu>
                 <item
                     android:id="@+id/nav_inventario"
                     android:icon="@drawable/ic_baseline_kitchen_24px"
@@ -14,34 +12,27 @@
                     android:id="@+id/nav_productos"
                     android:icon="@drawable/ic_baseline_shopping_cart_24px"
                     android:title="@string/Productos" />
-            </menu>
-        </item>
 
-        <item android:title="Principal">
-            <menu>
                 <item
                     android:id="@+id/nav_listas"
                     android:icon="@drawable/ic_baseline_list_24px"
                     android:title="@string/Listas" />
                 <item
-                    android:id="@+id/nav_compraDelMes"
+                    android:id="@+id/nav_infoMensual"
                     android:icon="@drawable/ic_baseline_calendar_today_24px"
-                    android:title="@string/CompraDelMes" />
+                    android:title="Info mensual" />
                 <item
                     android:id="@+id/nav_escanear"
                     android:icon="@drawable/ic_menu_camera"
                     android:title="@string/Escanear" />
-            </menu>
-         </item>
-
-    <item android:title="">
-        <menu>
-            <item
-                android:id="@+id/nav_Home"
-                android:icon="@drawable/ic_baseline_home_24px"
-                android:title="@string/Pantalla_Principal" />
-        </menu>
-    </item>
+                <item
+                    android:id="@+id/nav_configuracion"
+                    android:icon="@drawable/ic_baseline_settings_20px"
+                    android:title="Configuración" />
+                <item
+                    android:id="@+id/nav_Home"
+                    android:icon="@drawable/ic_baseline_home_24px"
+                    android:title="@string/Pantalla_Principal" />
     </group>
 </menu>
 

@@ -11,14 +11,14 @@ import java.util.ArrayList;
 
 public class AdapterNevera extends RecyclerView.Adapter<AdapterNevera.ViewHolderNevera> {
 
-    ArrayList<String> listDatos;
+    ArrayList<String> listCantidad;
     ArrayList<String> listProd;
-    ArrayList<String> listCat;
+    ArrayList<String> listCaducidad;
 
-    public AdapterNevera(ArrayList<String> listDatos, ArrayList<String> listProd, ArrayList<String> listCat) {
-        this.listDatos = listDatos;
+    public AdapterNevera(ArrayList<String> listCantidad, ArrayList<String> listProd, ArrayList<String> listCaducidad) {
+        this.listCantidad = listCantidad;
         this.listProd = listProd;
-        this.listCat = listCat;
+        this.listCaducidad = listCaducidad;
     }
 
     @Override
@@ -30,7 +30,7 @@ public class AdapterNevera extends RecyclerView.Adapter<AdapterNevera.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderNevera viewHolderNevera, int i) {
-        viewHolderNevera.asignarDatos(listDatos.get(i),listProd.get(i),listCat.get(i));
+        viewHolderNevera.asignarDatos(listCantidad.get(i),listProd.get(i),listCaducidad.get(i));
     }
 
     @Override
@@ -40,21 +40,21 @@ public class AdapterNevera extends RecyclerView.Adapter<AdapterNevera.ViewHolder
 
     public class ViewHolderNevera extends RecyclerView.ViewHolder {
 
-        TextView dato;
+        TextView cantidad;
         TextView product;
-        TextView cat;
+        TextView cad;
 
         public ViewHolderNevera(@NonNull View itemView) {
             super(itemView);
-            dato = itemView.findViewById(R.id.idDato);
+            cantidad = itemView.findViewById(R.id.idCantidadNevera);
             product = itemView.findViewById(R.id.idDatoProductoNevera);
-            cat = itemView.findViewById(R.id.idDatoCategoriaNevera);
+            cad = itemView.findViewById(R.id.idCaducidadNevera);
         }
 
         public void asignarDatos(String s, String s1, String s2) {
-            dato.setText(s);
+            cantidad.setText(s);
             product.setText(s1);
-            cat.setText(s2);
+            cad.setText(s2);
         }
     }
 }

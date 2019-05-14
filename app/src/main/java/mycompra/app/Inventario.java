@@ -43,17 +43,25 @@ public class Inventario extends Fragment {
             }
         });
 
-
-        FloatingActionButton fab = (FloatingActionButton) vista.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        Button btnCongelador = (Button) vista.findViewById(R.id.buttonCongelador);
+        btnCongelador.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.frame,new NuevoInventario());
-                fr.commit();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.frame,new Congelador());
+                ft.commit();
             }
         });
 
+        Button btnDespensa = (Button) vista.findViewById(R.id.buttonDespensa);
+        btnDespensa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.frame,new Despensa());
+                ft.commit();
+            }
+        });
 
 
         return vista;

@@ -5,30 +5,30 @@
     android:layout_height="match_parent"
     tools:context=".Configuracion">
 
-    <!-- TODO: Update blank fragment layout -->
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginRight="20dp"
         android:orientation="horizontal">
 
-        <Space
-            android:layout_width="25dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <Space
+            <Button
+                android:id="@+id/button2"
                 android:layout_width="match_parent"
-                android:layout_height="72dp" />
+                android:layout_height="wrap_content"
+                android:text="Añadir categoría" />
 
-            <TextView
+            <Button
+                android:id="@+id/button3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/Configuracion" />
+                android:layout_height="wrap_content"
+                android:text="Añadir tag a catrgoría" />
         </LinearLayout>
     </LinearLayout>
 

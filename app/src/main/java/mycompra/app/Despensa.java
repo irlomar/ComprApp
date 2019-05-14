@@ -17,12 +17,14 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Listas extends Fragment {
+public class Despensa extends Fragment {
 
-    ArrayList<String> nombreListas;
+    ArrayList<String> listCantidadD;
+    ArrayList<String> listProdD;
+    ArrayList<String> listCaducidadD;
     RecyclerView recycler;
 
-    public Listas() {
+    public Despensa() {
         // Required empty public constructor
     }
 
@@ -30,29 +32,19 @@ public class Listas extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View vista = inflater.inflate(R.layout.fragment_listas, container, false);
-
-        recycler = vista.findViewById(R.id.RecyclerIdListas);
+        // Inflate the layout for this fragment
+        View vista = inflater.inflate(R.layout.fragment_despensa, container, false);
+        recycler= vista.findViewById(R.id.RecyclerId);
         recycler.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        llenarListas();
+        llenarLista();
 
-        AdapterListas adapter = new AdapterListas(nombreListas);
+        AdapterNevera adapter = new AdapterNevera(listCantidadD,listProdD,listCaducidadD);
 
         recycler.setAdapter(adapter);
 
-        adapter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.frame,new ListaHabitual());
-                fr.commit();
-            }
-        });
-
-        FloatingActionButton buttonNuevaLista = vista.findViewById(R.id.buttonNuevaLista);
-        buttonNuevaLista.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton buttonNuevoProdNevera = vista.findViewById(R.id.buttonNuevoProdDespensa);
+        buttonNuevoProdNevera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
@@ -60,16 +52,22 @@ public class Listas extends Fragment {
                 fr.commit();
             }
         });
+
         return vista;
     }
 
-    private void llenarListas() {
-        nombreListas = new ArrayList<String>();
 
-            nombreListas.add("Lista Habitual");
-            nombreListas.add("Lista Customizada");
-            nombreListas.add("Lista Compartida" );
+    private void llenarLista(){
 
+        listCantidadD = new ArrayList<String>();
+        listProdD = new ArrayList<String>();
+        listCaducidadD = new ArrayList<String>();
+
+        for(int i = 0; i < 10; i++){
+            listCantidadD.add("N");
+            listProdD.add("Producto" + i);
+            listCaducidadD.add("Caducidad");
+        }
     }
 
 }

@@ -1,11 +1,8 @@
 package mycompra.app;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
@@ -98,11 +95,11 @@ public class MainActivity extends AppCompatActivity
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.frame, fragment, "Listas");
             fragmentTransaction.commit();
-        } else if (id == R.id.nav_compraDelMes) {
-            setTitle("CompraDelMes");
-            CompraDelMes fragment = new CompraDelMes();
+        } else if (id == R.id.nav_infoMensual) {
+            setTitle("InfoMensual");
+            InfoMensual fragment = new InfoMensual();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frame, fragment, "CompraDelMes");
+            fragmentTransaction.replace(R.id.frame, fragment, "InfoMensual");
             fragmentTransaction.commit();
         } else if (id == R.id.nav_escanear) {
 
@@ -111,6 +108,12 @@ public class MainActivity extends AppCompatActivity
             Principal fragment = new Principal();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.frame, fragment, "Principal");
+            fragmentTransaction.commit();
+        }else if (id == R.id.nav_configuracion) {
+            setTitle("Principal");
+            Configuracion fragment = new Configuracion();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frame, fragment, "Configuración");
             fragmentTransaction.commit();
         }
 

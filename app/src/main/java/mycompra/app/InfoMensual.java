@@ -8,16 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toolbar;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CompraDelMes extends Fragment {
+public class InfoMensual extends Fragment {
 
 
-    public CompraDelMes() {
+    public InfoMensual() {
         // Required empty public constructor
     }
 
@@ -26,7 +25,7 @@ public class CompraDelMes extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View vista = inflater.inflate(R.layout.fragment_compra_del_mes, container, false);
+        final View vista = inflater.inflate(R.layout.fragment_info_mensual, container, false);
         Button btnTicketsMes = (Button) vista.findViewById(R.id.buttonVerTickets);
         btnTicketsMes.setOnClickListener(new View.OnClickListener() {
             @Override

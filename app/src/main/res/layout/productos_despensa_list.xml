@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,7 +11,7 @@
         android:textAlignment="center">
 
         <TextView
-            android:id="@+id/idCantidadNevera"
+            android:id="@+id/idCantidadDespensa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
@@ -21,7 +19,7 @@
             android:textAlignment="center" />
 
         <TextView
-            android:id="@+id/idDatoProductoNevera"
+            android:id="@+id/idDatoProductoDespensa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
@@ -29,7 +27,7 @@
             android:textAlignment="center" />
 
         <TextView
-            android:id="@+id/idCaducidadNevera"
+            android:id="@+id/idCaducidadDespensa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
