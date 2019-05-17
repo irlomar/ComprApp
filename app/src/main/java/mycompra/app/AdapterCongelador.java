@@ -24,7 +24,7 @@ public class AdapterCongelador extends RecyclerView.Adapter<AdapterCongelador.Vi
     @NonNull
     @Override
     public ViewHolderCongelador onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.productos_nevera_list,null,false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.productos_congelador_list,null,false);
         return new ViewHolderCongelador(view);
     }
 
@@ -44,9 +44,9 @@ public class AdapterCongelador extends RecyclerView.Adapter<AdapterCongelador.Vi
         TextView cadC;
         public ViewHolderCongelador(@NonNull View itemView) {
             super(itemView);
-            cantidadC = itemView.findViewById(R.id.idCantidadNevera);
-            productC = itemView.findViewById(R.id.idDatoProductoNevera);
-            cadC = itemView.findViewById(R.id.idCaducidadNevera);
+            cantidadC = itemView.findViewById(R.id.idCantidadCongelador);
+            productC = itemView.findViewById(R.id.idDatoProductoCongelador);
+            cadC = itemView.findViewById(R.id.idCaducidadCongelador);
         }
 
         public void asignarDatos(String s, String s1, String s2) {

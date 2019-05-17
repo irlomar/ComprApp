@@ -23,7 +23,7 @@ public class AdapterListas extends RecyclerView.Adapter<AdapterListas.ViewHolder
     public ViewHolderListas onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.fragment_listas,null,false);
         view.setOnClickListener(this);
-        return new AdapterListas.ViewHolderListas(view);
+        return new ViewHolderListas(view);
     }
 
     @Override

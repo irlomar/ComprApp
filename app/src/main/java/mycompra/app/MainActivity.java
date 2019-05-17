@@ -102,7 +102,11 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.frame, fragment, "InfoMensual");
             fragmentTransaction.commit();
         } else if (id == R.id.nav_escanear) {
-
+            setTitle("Principal");
+            Escanear fragment = new Escanear();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frame, fragment, "Escanear");
+            fragmentTransaction.commit();
         } else if (id == R.id.nav_Home) {
             setTitle("Principal");
             Principal fragment = new Principal();
