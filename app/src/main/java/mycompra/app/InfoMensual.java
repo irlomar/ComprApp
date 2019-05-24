@@ -26,16 +26,6 @@ public class InfoMensual extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View vista = inflater.inflate(R.layout.fragment_info_mensual, container, false);
-        Button btnTicketsMes = (Button) vista.findViewById(R.id.buttonVerTickets);
-        btnTicketsMes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame,new TicketsDelMes());
-                ft.commit();
-            }
-
-        });
 
         return vista;
     }
