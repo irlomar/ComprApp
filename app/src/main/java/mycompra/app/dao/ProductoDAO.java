@@ -24,7 +24,6 @@ public class ProductoDAO {
         ContentValues values = new ContentValues();
         values.put(Producto.KEY_Nombre, producto.getNombre());
         values.put(Producto.KEY_Precio, producto.getPrecio());
-        values.put(Producto.KEY_PrecioKilo, producto.getPrecioKilo());
         values.put(Producto.KEY_Caducidad, producto.getCaducidad());
         values.put(Producto.KEY_ID_Inventario, producto.getIdInventario());
         values.put(Producto.KEY_ID_Categoria, producto.getIdCategoria());
@@ -47,7 +46,6 @@ public class ProductoDAO {
 
         values.put(Producto.KEY_Nombre, producto.getNombre());
         values.put(Producto.KEY_Precio, producto.getPrecio());
-        values.put(Producto.KEY_PrecioKilo, producto.getPrecioKilo());
         values.put(Producto.KEY_Caducidad, producto.getCaducidad());
         values.put(Producto.KEY_ID_Inventario, producto.getIdInventario());
         values.put(Producto.KEY_ID_Categoria, producto.getIdCategoria());
@@ -62,7 +60,6 @@ public class ProductoDAO {
                 Producto.KEY_ID + "," +
                 Producto.KEY_Nombre + "," +
                 Producto.KEY_Precio + "," +
-                Producto.KEY_PrecioKilo + "," +
                 Producto.KEY_Caducidad + "," +
                 Producto.KEY_ID_Inventario + "," +
                 Producto.KEY_ID_Categoria +
@@ -79,7 +76,6 @@ public class ProductoDAO {
                 producto.setId(cursor.getInt(cursor.getColumnIndex(Producto.KEY_ID)));
                 producto.setNombre(cursor.getString(cursor.getColumnIndex(Producto.KEY_Nombre)));
                 producto.setPrecio(cursor.getDouble(cursor.getColumnIndex(Producto.KEY_Precio)));
-                producto.setPrecioKilo(cursor.getDouble(cursor.getColumnIndex(Producto.KEY_PrecioKilo)));
                 producto.setCaducidad(cursor.getString(cursor.getColumnIndex(Producto.KEY_Caducidad)));
                 producto.setIdInventario(cursor.getInt(cursor.getColumnIndex(Producto.KEY_ID_Inventario)));
                 producto.setIdCategoria(cursor.getInt(cursor.getColumnIndex(Producto.KEY_ID_Categoria)));
@@ -96,7 +92,6 @@ public class ProductoDAO {
                 Producto.KEY_ID + "," +
                 Producto.KEY_Nombre + "," +
                 Producto.KEY_Precio + "," +
-                Producto.KEY_PrecioKilo + "," +
                 Producto.KEY_Caducidad + "," +
                 Producto.KEY_ID_Inventario + "," +
                 Producto.KEY_ID_Categoria +
@@ -112,7 +107,6 @@ public class ProductoDAO {
                 producto.setId(cursor.getInt(cursor.getColumnIndex(Producto.KEY_ID)));
                 producto.setNombre(cursor.getString(cursor.getColumnIndex(Producto.KEY_Nombre)));
                 producto.setPrecio(cursor.getDouble(cursor.getColumnIndex(Producto.KEY_Precio)));
-                producto.setPrecioKilo(cursor.getDouble(cursor.getColumnIndex(Producto.KEY_PrecioKilo)));
                 producto.setCaducidad(cursor.getString(cursor.getColumnIndex(Producto.KEY_Caducidad)));
                 producto.setIdInventario(cursor.getInt(cursor.getColumnIndex(Producto.KEY_ID_Inventario)));
                 producto.setIdCategoria(cursor.getInt(cursor.getColumnIndex(Producto.KEY_ID_Categoria)));
