@@ -18,11 +18,11 @@ import android.widget.Toast;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Inventario extends Fragment {
+public class Inventarios extends Fragment {
 
     NuevoInventario nuevoInventario;
 
-    public Inventario() {
+    public Inventarios() {
         // Required empty public constructor
     }
 
