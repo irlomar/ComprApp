@@ -1,10 +1,10 @@
-package com.example.comprapp.logica;
-
-import com.example.comprapp.dao.CategoriaDAO;
-import com.example.comprapp.modelo.Categoria;
-import com.example.comprapp.modelo.Producto;
+package mycompra.app.logica;
 
 import java.util.ArrayList;
+
+import mycompra.app.dao.CategoriaDAO;
+import mycompra.app.modelo.Categoria;
+import mycompra.app.modelo.Producto;
 
 public class ClasificadorCategoria {
     //private Categoria tags;
@@ -13,7 +13,7 @@ public class ClasificadorCategoria {
     private static ArrayList<Categoria> categorias;
 
     public ClasificadorCategoria(){
-        categoriaDAO = new CategoriaDAO();
+        //categoriaDAO = new CategoriaDAO();
         //tags = new Tags();
         categorias = categoriaDAO.getCategoriaList();
     }
@@ -22,7 +22,7 @@ public class ClasificadorCategoria {
     public Categoria findCategoria(Producto producto) {
         String prodName = producto.getNombre();
 
-        for (int i = 0; i < categorias.size(); i++) // Recorre categorias
+        /*for (int i = 0; i < categorias.size(); i++) // Recorre categorias
         {
             int numTags = categorias.get(i).getTags().size();
             Categoria categoriaActual = categorias.get(i);
@@ -33,7 +33,7 @@ public class ClasificadorCategoria {
                     return categoriaActual;
                 }
             }
-        }
+        }*/
 
         return null;
     }

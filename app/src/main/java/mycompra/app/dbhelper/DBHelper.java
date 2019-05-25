@@ -67,7 +67,6 @@ public class DBHelper extends SQLiteOpenHelper {
                 + Producto.KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT ,"
                 + Producto.KEY_Nombre + " TEXT ,"
                 + Producto.KEY_Precio + " REAL ,"
-                + Producto.KEY_PrecioKilo + " REAL ,"
                 + Producto.KEY_Caducidad + " TEXT ,"
                 + Producto.KEY_ID_Categoria + " INTEGER ,"
                 + Producto.KEY_ID_Inventario + " INTEGER ,"

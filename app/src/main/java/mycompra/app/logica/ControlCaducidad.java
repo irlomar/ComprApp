@@ -1,15 +1,11 @@
-package com.example.comprapp.logica;
-
-import com.example.comprapp.dao.CategoriaDAO;
-import com.example.comprapp.modelo.Categoria;
-import com.example.comprapp.modelo.Producto;
+package mycompra.app.logica;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
-import java.util.ResourceBundle;
+
+import mycompra.app.modelo.Producto;
 
 public class ControlCaducidad {
 
@@ -17,15 +13,16 @@ public class ControlCaducidad {
 
     public ControlCaducidad() {}
 
-    public boolean checkCaducidad(Producto prod)
+    /*public boolean checkCaducidad(Producto prod)
     {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MMM/yyyy", Locale.US);
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
 
         try {
             Date caducidad = formatter.parse(prod.getCaducidad());
 
-            if (caducidad.)
+            //if (caducidad.)
 
         }catch (ParseException e) {}
-    }
+        return false;
+    }*/
 }

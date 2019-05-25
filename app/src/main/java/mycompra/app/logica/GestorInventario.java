@@ -1,10 +1,8 @@
-package com.example.comprapp.logica;
-
-import com.example.comprapp.modelo.Inventario;
-import com.example.comprapp.modelo.Producto;
-
+package mycompra.app.logica;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
+
+import mycompra.app.modelo.Inventario;
+import mycompra.app.modelo.Producto;
 
 public class GestorInventario
 {
@@ -24,7 +22,7 @@ public class GestorInventario
         inventarios = new Inventario[] {NEVERA, CONGELADOR, DESPENSA};
     }
 
-    public boolean guardarProducto(Producto prod)
+    /*public boolean guardarProducto(Producto prod)
     {
         for (int i = 0; i < NEVERA.getCategorias().size(); i++)
         {
@@ -50,5 +48,5 @@ public class GestorInventario
     public ArrayList<Producto> getProductos(Inventario inventario)
     {
         return inventario.getProductos();
-    }
+    }*/
 }
