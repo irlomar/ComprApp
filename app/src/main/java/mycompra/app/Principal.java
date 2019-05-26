@@ -52,7 +52,7 @@ public class Principal extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame,new Inventario());
+                ft.replace(R.id.frame,new Inventarios());
                 ft.commit();
             }
         });
