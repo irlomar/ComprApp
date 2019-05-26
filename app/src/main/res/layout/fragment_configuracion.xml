@@ -19,13 +19,13 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/buttonNuevaCat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Añadir categoría" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/buttonNuevaTag"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Añadir tag a catrgoría" />

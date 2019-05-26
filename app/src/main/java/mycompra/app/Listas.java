@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class Listas extends Fragment {
 
     ArrayList<String> nombreListas;
-    RecyclerView recycler;
+    RecyclerView recyclerListas;
 
     public Listas() {
         // Required empty public constructor
@@ -33,23 +33,15 @@ public class Listas extends Fragment {
 
         View vista = inflater.inflate(R.layout.fragment_listas, container, false);
 
-        recycler = vista.findViewById(R.id.RecyclerIdListas);
-        recycler.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerListas = vista.findViewById(R.id.RecyclerIdListas);
+        recyclerListas.setLayoutManager(new LinearLayoutManager(getContext()));
 
         llenarListas();
 
         AdapterListas adapter = new AdapterListas(nombreListas);
 
-        recycler.setAdapter(adapter);
+        recyclerListas.setAdapter(adapter);
 
-        adapter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.frame,new ListaHabitual());
-                fr.commit();
-            }
-        });
 
         FloatingActionButton buttonNuevaLista = vista.findViewById(R.id.buttonNuevaLista);
         buttonNuevaLista.setOnClickListener(new View.OnClickListener() {
