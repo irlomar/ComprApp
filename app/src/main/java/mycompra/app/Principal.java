@@ -37,15 +37,15 @@ public class Principal extends Fragment {
             }
         });
 
-        /*Button btnEscanerPrincial = (Button) vista.findViewById(R.id.btnEscPrincId);
+        Button btnEscanerPrincial = (Button) vista.findViewById(R.id.btnEscPrincId);
         btnEscanerPrincial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame,new Escaner());
+                ft.replace(R.id.frame,new Escanear());
                 ft.commit();
             }
-        });*/
+        });
 
         Button btnInventarioPrincipal = (Button) vista.findViewById(R.id.btnInventPrincId);
         btnInventarioPrincipal.setOnClickListener(new View.OnClickListener() {
