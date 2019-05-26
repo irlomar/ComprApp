@@ -1,37 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="?attr/selectableItemBackground"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:padding="@dimen/fab_margin"
+    android:focusable="true">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/idDatos"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="72dp" >
+        android:layout_marginEnd="10sp"
+        android:text="N"
+        android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/idDatos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="dato"
-            android:layout_marginRight="10dp"/>
+    <TextView
+        android:id="@+id/idDatoProducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10sp"
+        android:text="Producto"
+        android:layout_toEndOf="@id/idDatos"
+        android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/idDatoProducto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Producto"
-            android:layout_marginRight="10dp"/>
+    <TextView
+        android:id="@+id/idDatoCategoriaProducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:text="Caducidad"
+        android:layout_alignParentEnd="true"
+        android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/idDatoCategoriaProducto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Categoria"
-            android:layout_marginRight="10dp"/>
-
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

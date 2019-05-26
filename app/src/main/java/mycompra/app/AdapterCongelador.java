@@ -21,10 +21,10 @@ public class AdapterCongelador extends RecyclerView.Adapter<AdapterCongelador.Vi
         this.listCaducidadC = listCaducidadC;
     }
 
-    @NonNull
     @Override
-    public ViewHolderCongelador onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.productos_congelador_list,null,false);
+    public ViewHolderCongelador onCreateViewHolder(ViewGroup viewGroup, int i) {
+
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.productos_congelador_list, viewGroup,false);
         return new ViewHolderCongelador(view);
     }
 
@@ -39,9 +39,11 @@ public class AdapterCongelador extends RecyclerView.Adapter<AdapterCongelador.Vi
     }
 
     public class ViewHolderCongelador extends RecyclerView.ViewHolder {
+
         TextView cantidadC;
         TextView productC;
         TextView cadC;
+
         public ViewHolderCongelador(@NonNull View itemView) {
             super(itemView);
             cantidadC = itemView.findViewById(R.id.idCantidadCongelador);

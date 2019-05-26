@@ -12,6 +12,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.Toast;
 
 import java.io.File;
 
@@ -83,28 +84,6 @@ public class MainActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -813,6 +792,7 @@ public class MainActivity extends AppCompatActivity
         Producto productoHuevos = new Producto();
         productoHuevos.setNombre("Huevos XL");
         productoHuevos.setPrecio(1.60);
+        productoHuevos.setCantidad(1);
         productoHuevos.setIdInventario(2);
         productoHuevos.setIdCategoria(6);
         productoDAO.insert(productoHuevos);
@@ -821,13 +801,15 @@ public class MainActivity extends AppCompatActivity
         productoYogurt.setNombre("Yogurt Fresa");
         productoYogurt.setPrecio(1.60);
         productoYogurt.setCaducidad("25/05/2019");
-        productoYogurt.setIdInventario(1);
+        productoYogurt.setCantidad(2);
+        productoYogurt.setIdInventario(2);
         productoYogurt.setIdCategoria(2);
-        productoDAO.insert(productoHuevos);
+        productoDAO.insert(productoYogurt);
 
         Producto productoChips = new Producto();
         productoChips.setNombre("ChipsAhoy");
         productoChips.setPrecio(1.60);
+        productoChips.setCantidad(1);
         productoChips.setIdInventario(1);
         productoChips.setIdCategoria(14);
         productoDAO.insert(productoChips);
@@ -835,6 +817,7 @@ public class MainActivity extends AppCompatActivity
         Producto productoMolde = new Producto();
         productoMolde.setNombre("Pan Molde");
         productoMolde.setPrecio(1.68);
+        productoMolde.setCantidad(1);
         productoMolde.setIdInventario(1);
         productoMolde.setIdCategoria(8);
         productoDAO.insert(productoMolde);
@@ -843,13 +826,15 @@ public class MainActivity extends AppCompatActivity
         productoQueso.setNombre("Queso Fresco");
         productoQueso.setPrecio(2.50);
         productoQueso.setCaducidad("02/06/2019");
-        productoQueso.setIdInventario(1);
+        productoQueso.setCantidad(2);
+        productoQueso.setIdInventario(2);
         productoQueso.setIdCategoria(2);
         productoDAO.insert(productoQueso);
 
         Producto productoLechuga = new Producto();
         productoLechuga.setNombre("Lechuga Iceberg");
         productoLechuga.setPrecio(1.10);
+        productoLechuga.setCantidad(1);
         productoLechuga.setIdInventario(2);
         productoLechuga.setIdCategoria(2);
         productoDAO.insert(productoLechuga);
@@ -857,6 +842,7 @@ public class MainActivity extends AppCompatActivity
         Producto productoPizza = new Producto();
         productoPizza.setNombre("Pizza 4 Quesos");
         productoPizza.setPrecio(2.70);
+        productoPizza.setCantidad(1);
         productoPizza.setIdInventario(2);
         productoPizza.setIdCategoria(10);
         productoDAO.insert(productoPizza);
@@ -864,6 +850,7 @@ public class MainActivity extends AppCompatActivity
         Producto productoYork = new Producto();
         productoYork.setNombre("York Lonchas");
         productoYork.setPrecio(1.80);
+        productoYork.setCantidad(1);
         productoYork.setIdInventario(2);
         productoYork.setIdCategoria(4);
         productoDAO.insert(productoYork);
@@ -871,6 +858,7 @@ public class MainActivity extends AppCompatActivity
         Producto productoSalteado = new Producto();
         productoSalteado.setNombre("Salteado verduras");
         productoSalteado.setPrecio(2.20);
+        productoSalteado.setCantidad(1);
         productoSalteado.setIdInventario(3);
         productoSalteado.setIdCategoria(21);
         productoDAO.insert(productoSalteado);
@@ -878,6 +866,7 @@ public class MainActivity extends AppCompatActivity
         Producto productoHelado = new Producto();
         productoHelado.setNombre("Helado vainilla");
         productoHelado.setPrecio(2.50);
+        productoHelado.setCantidad(1);
         productoHelado.setIdInventario(3);
         productoHelado.setIdCategoria(19);
         productoDAO.insert(productoHelado);
@@ -885,6 +874,7 @@ public class MainActivity extends AppCompatActivity
         Producto productoPlatano = new Producto();
         productoPlatano.setNombre("Platano Canarias");
         productoPlatano.setPrecio(1.39);
+        productoPlatano.setCantidad(1);
         productoPlatano.setIdInventario(2);
         productoPlatano.setIdCategoria(3);
         productoDAO.insert(productoPlatano);
@@ -893,6 +883,7 @@ public class MainActivity extends AppCompatActivity
         productoNapolitanas.setNombre("Napolitanas");
         productoNapolitanas.setPrecio(0.89);
         productoNapolitanas.setCaducidad("01/06/2019");
+        productoNapolitanas.setCantidad(1);
         productoNapolitanas.setIdInventario(1);
         productoNapolitanas.setIdCategoria(14);
         productoDAO.insert(productoNapolitanas);
@@ -900,6 +891,7 @@ public class MainActivity extends AppCompatActivity
         Producto productoManzana = new Producto();
         productoManzana.setNombre("Manzana Royal Gala");
         productoManzana.setPrecio(1.25);
+        productoManzana.setCantidad(1);
         productoManzana.setIdInventario(2);
         productoManzana.setIdCategoria(3);
         productoDAO.insert(productoManzana);

@@ -5,13 +5,19 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import mycompra.app.dao.ProductoDAO;
+import mycompra.app.modelo.Producto;
 
 
 /**
@@ -23,6 +29,7 @@ public class Nevera extends Fragment {
     ArrayList<String> listProd;
     ArrayList<String> listCaducidad;
     RecyclerView recycler;
+    ArrayList<Producto> listaProductos;
 
     public Nevera() {
         // Required empty public constructor
@@ -34,20 +41,38 @@ public class Nevera extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_nevera, container, false);
-        recycler= view.findViewById(R.id.RecyclerId);
-        recycler.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        recycler = view.findViewById(R.id.RecyclerId);
 
         llenarLista();
 
-        AdapterNevera adapter = new AdapterNevera(listCantidad,listProd,listCaducidad);
+        AdapterNevera adapter = new AdapterNevera(listCantidad, listProd, listCaducidad);
 
         recycler.setAdapter(adapter);
+
+        recycler.setItemAnimator(new DefaultItemAnimator());
+
+        recycler.addOnItemTouchListener(new RecyclerItemClickListener(getActivity().getApplicationContext(), new RecyclerItemClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.frame, new Nuevo_producto_lista());
+                ft.commit();
+            }
+        }));
+
+        recycler.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
+
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recycler.getContext(),
+                ((LinearLayoutManager) recycler.getLayoutManager()).getOrientation());
+        recycler.addItemDecoration(dividerItemDecoration);
+
         FloatingActionButton buttonNuevoProdNevera = view.findViewById(R.id.buttonNuevoProdNevera);
         buttonNuevoProdNevera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.frame,new NuevaLista());
+                fr.replace(R.id.frame, new NuevaLista());
                 fr.commit();
             }
         });
@@ -55,15 +80,18 @@ public class Nevera extends Fragment {
     }
 
     private void llenarLista(){
+        ProductoDAO productoDAO = new ProductoDAO(getActivity().getApplicationContext());
+
+        listaProductos = productoDAO.getProductoListNevera();
 
         listCantidad = new ArrayList<String>();
         listProd = new ArrayList<String>();
         listCaducidad = new ArrayList<String>();
 
-        for(int i = 0; i < 10; i++){
-            listCantidad.add("N");
-            listProd.add("Producto" + i);
-            listCaducidad.add("Caducidad");
+        for(int i = 0; i < listaProductos.size(); i++){
+            listCantidad.add(String.valueOf(listaProductos.get(i).getCantidad()));
+            listProd.add(listaProductos.get(i).getNombre());
+            listCaducidad.add(listaProductos.get(i).getCaducidad());
         }
     }
 }

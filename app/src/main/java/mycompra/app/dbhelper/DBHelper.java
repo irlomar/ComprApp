@@ -28,12 +28,14 @@ public class DBHelper extends SQLiteOpenHelper {
 
         String CREATE_TABLE_CATEGORIA = "CREATE TABLE " + Categoria.TABLE + "("
                 + Categoria.KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT ,"
-                + Categoria.KEY_Nombre + " TEXT)";
+                + Categoria.KEY_Nombre + " TEXT ,"
+                + Categoria.KEY_ID_Inventario + " INTEGER ,"
+                + " FOREIGN KEY(" + Categoria.KEY_ID_Inventario + ") REFERENCES " + Inventario.TABLE + "(" + Inventario.KEY_ID + ") ON UPDATE CASCADE ON DELETE CASCADE)";
         sqLiteDatabase.execSQL(CREATE_TABLE_CATEGORIA);
 
         String CREATE_TABLE_INVENTARIO = "CREATE TABLE " + Inventario.TABLE + "("
                 + Inventario.KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT ,"
-                + Inventario.KEY_Nombre + " TEXT )";
+                + Inventario.KEY_Nombre + " TEXT)";
         sqLiteDatabase.execSQL(CREATE_TABLE_INVENTARIO);
 
         String CREATE_TABLE_LISTA = "CREATE TABLE " + Lista.TABLE + "("
@@ -68,6 +70,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 + Producto.KEY_Nombre + " TEXT ,"
                 + Producto.KEY_Precio + " REAL ,"
                 + Producto.KEY_Caducidad + " TEXT ,"
+                + Producto.KEY_Cantidad + " INTEGER ,"
                 + Producto.KEY_ID_Categoria + " INTEGER ,"
                 + Producto.KEY_ID_Inventario + " INTEGER ,"
                 + " FOREIGN KEY(" + Producto.KEY_ID_Categoria + ") REFERENCES " + Categoria.TABLE + "(" + Categoria.KEY_ID + ") ON UPDATE CASCADE ON DELETE CASCADE, "

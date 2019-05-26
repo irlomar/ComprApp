@@ -1,37 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_width="match_parent"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="?attr/selectableItemBackground"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:padding="@dimen/fab_margin"
+    android:focusable="true">
+
+    <TextView
+        android:id="@+id/idCantidadCongelador"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:orientation="horizontal"
-        android:textAlignment="center">
+        android:layout_marginEnd="10sp"
+        android:text="N"
+        android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/idCantidadCongelador"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:text="N"
-            android:textAlignment="center" />
+    <TextView
+        android:id="@+id/idDatoProductoCongelador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10sp"
+        android:text="Producto"
+        android:layout_toEndOf="@id/idCantidadCongelador"
+        android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/idDatoProductoCongelador"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:text="Producto"
-            android:textAlignment="center" />
+    <TextView
+        android:id="@+id/idCaducidadCongelador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:text="Caducidad"
+        android:layout_alignParentEnd="true"
+        android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/idCaducidadCongelador"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:text="Caducidad"
-            android:textAlignment="center" />
-
-    </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

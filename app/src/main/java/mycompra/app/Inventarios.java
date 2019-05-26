@@ -37,8 +37,9 @@ public class Inventarios extends Fragment {
         btnNevera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                getActivity().setTitle("Nevera");
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame,new Nevera());
+                ft.replace(R.id.frame, new Nevera());
                 ft.commit();
             }
         });
@@ -47,8 +48,9 @@ public class Inventarios extends Fragment {
         btnCongelador.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                getActivity().setTitle("Congelador");
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame,new Congelador());
+                ft.replace(R.id.frame, new Congelador());
                 ft.commit();
             }
         });
@@ -57,8 +59,9 @@ public class Inventarios extends Fragment {
         btnDespensa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                getActivity().setTitle("Despensa");
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame,new Despensa());
+                ft.replace(R.id.frame, new Despensa());
                 ft.commit();
             }
         });

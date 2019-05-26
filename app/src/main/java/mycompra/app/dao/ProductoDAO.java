@@ -25,6 +25,7 @@ public class ProductoDAO {
         values.put(Producto.KEY_Nombre, producto.getNombre());
         values.put(Producto.KEY_Precio, producto.getPrecio());
         values.put(Producto.KEY_Caducidad, producto.getCaducidad());
+        values.put(Producto.KEY_Cantidad, producto.getCantidad());
         values.put(Producto.KEY_ID_Inventario, producto.getIdInventario());
         values.put(Producto.KEY_ID_Categoria, producto.getIdCategoria());
 
@@ -47,6 +48,7 @@ public class ProductoDAO {
         values.put(Producto.KEY_Nombre, producto.getNombre());
         values.put(Producto.KEY_Precio, producto.getPrecio());
         values.put(Producto.KEY_Caducidad, producto.getCaducidad());
+        values.put(Producto.KEY_Cantidad, producto.getCantidad());
         values.put(Producto.KEY_ID_Inventario, producto.getIdInventario());
         values.put(Producto.KEY_ID_Categoria, producto.getIdCategoria());
 
@@ -61,6 +63,7 @@ public class ProductoDAO {
                 Producto.KEY_Nombre + "," +
                 Producto.KEY_Precio + "," +
                 Producto.KEY_Caducidad + "," +
+                Producto.KEY_Cantidad + "," +
                 Producto.KEY_ID_Inventario + "," +
                 Producto.KEY_ID_Categoria +
                 " FROM " + Producto.TABLE
@@ -77,6 +80,7 @@ public class ProductoDAO {
                 producto.setNombre(cursor.getString(cursor.getColumnIndex(Producto.KEY_Nombre)));
                 producto.setPrecio(cursor.getDouble(cursor.getColumnIndex(Producto.KEY_Precio)));
                 producto.setCaducidad(cursor.getString(cursor.getColumnIndex(Producto.KEY_Caducidad)));
+                producto.setCantidad(cursor.getInt(cursor.getColumnIndex(Producto.KEY_Cantidad)));
                 producto.setIdInventario(cursor.getInt(cursor.getColumnIndex(Producto.KEY_ID_Inventario)));
                 producto.setIdCategoria(cursor.getInt(cursor.getColumnIndex(Producto.KEY_ID_Categoria)));
             } while (cursor.moveToNext());
@@ -93,6 +97,7 @@ public class ProductoDAO {
                 Producto.KEY_Nombre + "," +
                 Producto.KEY_Precio + "," +
                 Producto.KEY_Caducidad + "," +
+                Producto.KEY_Cantidad + "," +
                 Producto.KEY_ID_Inventario + "," +
                 Producto.KEY_ID_Categoria +
                 " FROM " + Producto.TABLE;
@@ -108,6 +113,115 @@ public class ProductoDAO {
                 producto.setNombre(cursor.getString(cursor.getColumnIndex(Producto.KEY_Nombre)));
                 producto.setPrecio(cursor.getDouble(cursor.getColumnIndex(Producto.KEY_Precio)));
                 producto.setCaducidad(cursor.getString(cursor.getColumnIndex(Producto.KEY_Caducidad)));
+                producto.setCantidad(cursor.getInt(cursor.getColumnIndex(Producto.KEY_Cantidad)));
+                producto.setIdInventario(cursor.getInt(cursor.getColumnIndex(Producto.KEY_ID_Inventario)));
+                producto.setIdCategoria(cursor.getInt(cursor.getColumnIndex(Producto.KEY_ID_Categoria)));
+                productoList.add(producto);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+        return productoList;
+    }
+
+    public ArrayList<Producto> getProductoListNevera() {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String selectQuery =  "SELECT  " +
+                Producto.KEY_ID + "," +
+                Producto.KEY_Nombre + "," +
+                Producto.KEY_Precio + "," +
+                Producto.KEY_Caducidad + "," +
+                Producto.KEY_Cantidad + "," +
+                Producto.KEY_ID_Inventario + "," +
+                Producto.KEY_ID_Categoria +
+                " FROM " + Producto.TABLE +
+                " WHERE " + Producto.KEY_ID_Inventario + " = 2";
+
+        ArrayList<Producto> productoList = new ArrayList<>();
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                Producto producto = new Producto();
+                producto.setId(cursor.getInt(cursor.getColumnIndex(Producto.KEY_ID)));
+                producto.setNombre(cursor.getString(cursor.getColumnIndex(Producto.KEY_Nombre)));
+                producto.setPrecio(cursor.getDouble(cursor.getColumnIndex(Producto.KEY_Precio)));
+                producto.setCaducidad(cursor.getString(cursor.getColumnIndex(Producto.KEY_Caducidad)));
+                producto.setCantidad(cursor.getInt(cursor.getColumnIndex(Producto.KEY_Cantidad)));
+                producto.setIdInventario(cursor.getInt(cursor.getColumnIndex(Producto.KEY_ID_Inventario)));
+                producto.setIdCategoria(cursor.getInt(cursor.getColumnIndex(Producto.KEY_ID_Categoria)));
+                productoList.add(producto);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+        return productoList;
+    }
+
+    public ArrayList<Producto> getProductoListDespensa() {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String selectQuery =  "SELECT  " +
+                Producto.KEY_ID + "," +
+                Producto.KEY_Nombre + "," +
+                Producto.KEY_Precio + "," +
+                Producto.KEY_Caducidad + "," +
+                Producto.KEY_Cantidad + "," +
+                Producto.KEY_ID_Inventario + "," +
+                Producto.KEY_ID_Categoria +
+                " FROM " + Producto.TABLE +
+                " WHERE " + Producto.KEY_ID_Inventario + " = 1";
+
+        ArrayList<Producto> productoList = new ArrayList<>();
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                Producto producto = new Producto();
+                producto.setId(cursor.getInt(cursor.getColumnIndex(Producto.KEY_ID)));
+                producto.setNombre(cursor.getString(cursor.getColumnIndex(Producto.KEY_Nombre)));
+                producto.setPrecio(cursor.getDouble(cursor.getColumnIndex(Producto.KEY_Precio)));
+                producto.setCaducidad(cursor.getString(cursor.getColumnIndex(Producto.KEY_Caducidad)));
+                producto.setCantidad(cursor.getInt(cursor.getColumnIndex(Producto.KEY_Cantidad)));
+                producto.setIdInventario(cursor.getInt(cursor.getColumnIndex(Producto.KEY_ID_Inventario)));
+                producto.setIdCategoria(cursor.getInt(cursor.getColumnIndex(Producto.KEY_ID_Categoria)));
+                productoList.add(producto);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+        return productoList;
+    }
+
+    public ArrayList<Producto> getProductoListCongelador() {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String selectQuery =  "SELECT  " +
+                Producto.KEY_ID + "," +
+                Producto.KEY_Nombre + "," +
+                Producto.KEY_Precio + "," +
+                Producto.KEY_Caducidad + "," +
+                Producto.KEY_Cantidad + "," +
+                Producto.KEY_ID_Inventario + "," +
+                Producto.KEY_ID_Categoria +
+                " FROM " + Producto.TABLE +
+                " WHERE " + Producto.KEY_ID_Inventario + " = 3";
+
+        ArrayList<Producto> productoList = new ArrayList<>();
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                Producto producto = new Producto();
+                producto.setId(cursor.getInt(cursor.getColumnIndex(Producto.KEY_ID)));
+                producto.setNombre(cursor.getString(cursor.getColumnIndex(Producto.KEY_Nombre)));
+                producto.setPrecio(cursor.getDouble(cursor.getColumnIndex(Producto.KEY_Precio)));
+                producto.setCaducidad(cursor.getString(cursor.getColumnIndex(Producto.KEY_Caducidad)));
+                producto.setCantidad(cursor.getInt(cursor.getColumnIndex(Producto.KEY_Cantidad)));
                 producto.setIdInventario(cursor.getInt(cursor.getColumnIndex(Producto.KEY_ID_Inventario)));
                 producto.setIdCategoria(cursor.getInt(cursor.getColumnIndex(Producto.KEY_ID_Categoria)));
                 productoList.add(producto);

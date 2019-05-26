@@ -21,11 +21,10 @@ public class AdapterProductos extends RecyclerView.Adapter<AdapterProductos.View
         this.listCatProd = listCatProd;
     }
 
-    @NonNull
     @Override
     public ViewHolderProductos onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.productos_list,null,false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.productos_list,viewGroup,false);
 
         return new ViewHolderProductos(view);
     }

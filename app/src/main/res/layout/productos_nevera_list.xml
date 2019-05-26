@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:orientation="horizontal"
-        android:textAlignment="center">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="?attr/selectableItemBackground"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:padding="@dimen/fab_margin"
+    android:focusable="true">
 
         <TextView
             android:id="@+id/idCantidadNevera"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10sp"
             android:text="N"
-            android:textAlignment="center" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/idDatoProductoNevera"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
+            android:layout_marginStart="10sp"
             android:text="Producto"
-            android:textAlignment="center" />
+            android:layout_toEndOf="@id/idCantidadNevera"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/idCaducidadNevera"
@@ -34,8 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:text="Caducidad"
-            android:textAlignment="center" />
+            android:layout_alignParentEnd="true"
+            android:textSize="20sp" />
 
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

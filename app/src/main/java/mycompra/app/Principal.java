@@ -51,8 +51,9 @@ public class Principal extends Fragment {
         btnInventarioPrincipal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                getActivity().setTitle("Inventarios");
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame,new Inventarios());
+                ft.replace(R.id.frame, new Inventarios());
                 ft.commit();
             }
         });

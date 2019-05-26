@@ -14,6 +14,11 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
+import mycompra.app.dao.CategoriaDAO;
+import mycompra.app.dao.ProductoDAO;
+import mycompra.app.modelo.Categoria;
+import mycompra.app.modelo.Producto;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,6 +29,7 @@ public class Productos extends Fragment {
     ArrayList<String> listProduct;
     ArrayList<String> listCatProd;
     RecyclerView recyclerView;
+    ArrayList<Producto> listaProductos;
 
     public Productos() {
         // Required empty public constructor
@@ -59,15 +65,21 @@ public class Productos extends Fragment {
     }
 
     private void llenarListaProd() {
+        ProductoDAO productoDAO = new ProductoDAO(getActivity().getApplicationContext());
+        CategoriaDAO categoriaDAO = new CategoriaDAO(getActivity().getApplicationContext());
+
+        ArrayList<Categoria> listaCategorias = categoriaDAO.getCategoriaList();
+
+        listaProductos = productoDAO.getProductoList();
+
         listDatosProd = new ArrayList<String>();
         listProduct = new ArrayList<String>();
         listCatProd = new ArrayList<String>();
 
-        for(int i = 0; i < 10; i++){
-            listDatosProd.add("M");
-            listProduct.add("Producto" + i);
-            listCatProd.add("Categoria" + i);
+        for(int i = 0; i < listaProductos.size(); i++){
+            listDatosProd.add(String.valueOf(listaProductos.get(i).getCantidad()));
+            listProduct.add(listaProductos.get(i).getNombre());
+            listCatProd.add(listaCategorias.get(listaProductos.get(i).getIdCategoria() - 1).getNombre());
         }
     }
-
 }

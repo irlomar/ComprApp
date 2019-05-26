@@ -23,7 +23,7 @@ public class AdapterDespensa extends RecyclerView.Adapter<AdapterDespensa.ViewHo
 
     @Override
     public AdapterDespensa.ViewHolderDespensa onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.productos_nevera_list,null,false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.productos_despensa_list,viewGroup,false);
         return new ViewHolderDespensa(view);
     }
 

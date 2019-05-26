@@ -8,6 +8,7 @@ public class Producto {
     public static final String KEY_Nombre = "nombre";
     public static final String KEY_Precio = "precio";
     public static final String KEY_Caducidad = "caducidad";
+    public static final String KEY_Cantidad = "cantidad";
     public static final String KEY_ID_Inventario = "idInventario";
     public static final String KEY_ID_Categoria = "idCategoria";
 
@@ -15,17 +16,19 @@ public class Producto {
     private String nombre;
     private double precio;
     private String caducidad;
+    private int cantidad;
     private int idInventario;
     private int idCategoria;
 
     public Producto(){
     }
 
-    public Producto(int id, String nombre, double precio, String caducidad, int idInventario, int idCategoria){
+    public Producto(int id, String nombre, double precio, String caducidad, int cantidad, int idInventario, int idCategoria){
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
         this.caducidad = caducidad;
+        this.cantidad = cantidad;
         this.idInventario = idInventario;
         this.idCategoria = idCategoria;
     }
@@ -60,6 +63,14 @@ public class Producto {
 
     public void setCaducidad(String caducidad) {
         this.caducidad = caducidad;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
 
     public int getIdInventario() {

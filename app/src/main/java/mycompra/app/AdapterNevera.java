@@ -24,7 +24,8 @@ public class AdapterNevera extends RecyclerView.Adapter<AdapterNevera.ViewHolder
     @Override
     public ViewHolderNevera onCreateViewHolder(ViewGroup viewGroup, int i) {
 
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.productos_nevera_list,null,false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.productos_nevera_list, viewGroup,false);
+
         return new ViewHolderNevera(view);
     }
 
