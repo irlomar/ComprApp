@@ -112,4 +112,33 @@ public class TicketDAO {
         db.close();
         return ticketList;
     }
+
+    public Ticket getLastTicket(){
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String selectQuery =  "SELECT  " +
+                Ticket.KEY_ID + "," +
+                Ticket.KEY_Precio + "," +
+                Ticket.KEY_Fecha + "," +
+                Ticket.KEY_ID_Supermercado + "," +
+                Ticket.KEY_ID_Mes +
+                " FROM " + Ticket.TABLE
+                + " ORDER BY " + Ticket.KEY_ID + " DESC LIMIT 1";
+
+        Ticket ticket = new Ticket();
+
+        Cursor cursor = db.rawQuery(selectQuery, null );
+
+        if (cursor.moveToFirst()) {
+            do {
+                ticket.setId(cursor.getInt(cursor.getColumnIndex(Ticket.KEY_ID)));
+                ticket.setPrecio(cursor.getDouble(cursor.getColumnIndex(Ticket.KEY_Precio)));
+                ticket.setFecha(cursor.getString(cursor.getColumnIndex(Ticket.KEY_Fecha)));
+                ticket.setIdSupermercado(cursor.getInt(cursor.getColumnIndex(Ticket.KEY_ID_Supermercado)));
+                ticket.setIdMes(cursor.getInt(cursor.getColumnIndex(Ticket.KEY_ID_Mes)));
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return ticket;
+    }
 }

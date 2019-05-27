@@ -232,4 +232,37 @@ public class ProductoDAO {
         db.close();
         return productoList;
     }
+
+    public Producto getLastProducto(){
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String selectQuery =  "SELECT  " +
+                Producto.KEY_ID + "," +
+                Producto.KEY_Nombre + "," +
+                Producto.KEY_Precio + "," +
+                Producto.KEY_Caducidad + "," +
+                Producto.KEY_Cantidad + "," +
+                Producto.KEY_ID_Inventario + "," +
+                Producto.KEY_ID_Categoria +
+                " FROM " + Producto.TABLE
+                + " ORDER BY " + Producto.KEY_ID + " DESC LIMIT 1";
+
+        Producto producto = new Producto();
+
+        Cursor cursor = db.rawQuery(selectQuery, null );
+
+        if (cursor.moveToFirst()) {
+            do {
+                producto.setId(cursor.getInt(cursor.getColumnIndex(Producto.KEY_ID)));
+                producto.setNombre(cursor.getString(cursor.getColumnIndex(Producto.KEY_Nombre)));
+                producto.setPrecio(cursor.getDouble(cursor.getColumnIndex(Producto.KEY_Precio)));
+                producto.setCaducidad(cursor.getString(cursor.getColumnIndex(Producto.KEY_Caducidad)));
+                producto.setCantidad(cursor.getInt(cursor.getColumnIndex(Producto.KEY_Cantidad)));
+                producto.setIdInventario(cursor.getInt(cursor.getColumnIndex(Producto.KEY_ID_Inventario)));
+                producto.setIdCategoria(cursor.getInt(cursor.getColumnIndex(Producto.KEY_ID_Categoria)));
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return producto;
+    }
 }
