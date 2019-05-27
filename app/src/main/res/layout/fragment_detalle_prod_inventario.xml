@@ -2,166 +2,148 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="25dp"
-    android:layout_marginTop="72dp"
-    android:layout_marginRight="20dp"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".controlador.DetalleProdInventario">
 
     <TextView
+        android:id="@+id/textNombreProductoFragmentDetalle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:text="Nombre producto"
+        android:textSize="40sp"
+        android:gravity="center"
+        android:padding="@dimen/fab_margin"
         android:layout_marginBottom="20dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="10dp">
+        android:layout_marginBottom="10dp"
+        android:gravity="center">
 
         <TextView
             android:id="@+id/textPrecioInv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Precio:" />
+            android:text="Precio:"
+            android:paddingEnd="50sp"
+            android:textSize="20sp"/>
 
         <EditText
-            android:id="@+id/editTextPrecioInv"
+            android:id="@+id/editTextPrecioDetalle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="2,44" />
+            android:inputType="numberDecimal"
+            android:hint="2.44"
+            android:ems="5"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        android:gravity="center">
 
         <TextView
-            android:id="@+id/textView19"
+            android:id="@+id/textView21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="€" />
+            android:text="Cantidad:"
+            android:paddingEnd="30sp"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:id="@+id/textViewCantidadDetalle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="5"
+            android:hint="1"
+            android:textSize="20sp"/>
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="10dp">
+        android:layout_marginBottom="10dp"
+        android:gravity="center">
 
         <TextView
-            android:id="@+id/textPrecioKgInv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Precio Kg:" />
+            android:text="Caducidad:"
+            android:paddingEnd="20sp"
+            android:textSize="20sp"/>
 
         <EditText
-            android:id="@+id/editTextPrecioKgInv"
+            android:id="@+id/editTextCaducidadDetalle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="1,22" />
-
-        <TextView
-            android:id="@+id/textView20"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="€" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_marginBottom="10dp">
-
-        <TextView
-            android:id="@+id/textView21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Cantidad:" />
-
-        <TextView
-            android:id="@+id/textViewCantidadInv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="N" />
+            android:inputType="date"
+            android:hint="20/04/2019"
+            android:ems="5"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="10dp">
+        android:layout_marginBottom="10dp"
+        android:gravity="center">
 
         <TextView
             android:id="@+id/textView22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Categoria:" />
+            android:text="Inventario:"
+            android:paddingEnd="30sp"
+            android:textSize="20sp"/>
 
         <TextView
-            android:id="@+id/textViewTagInv"
+            android:id="@+id/textViewInventarioDetalle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Tag" />
+            android:text="Sin inventario"
+            android:paddingEnd="20sp"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_marginBottom="10dp">
-
-        <TextView
-            android:id="@+id/textView23"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Establecimiento:" />
-
-        <TextView
-            android:id="@+id/textSupermercado"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Supermercado1" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginBottom="20dp"
-        android:layout_gravity="bottom">
+        android:gravity="bottom">
 
         <Button
-            android:id="@+id/button9"
+            android:id="@+id/btnBorrarDetalle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Borrar"
-            android:layout_marginRight="25dp"/>
+            android:layout_marginStart="@dimen/fab_margin"
+            android:layout_marginEnd="@dimen/fab_margin"/>
 
         <Button
-            android:id="@+id/button10"
+            android:id="@+id/btnActualizarDetalle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Aceptar"
-            android:layout_marginLeft="25dp"/>
+            android:text="Actualizar"
+            android:layout_marginStart="@dimen/fab_margin"
+            android:layout_marginEnd="@dimen/fab_margin" />
     </LinearLayout>
 
 </LinearLayout>

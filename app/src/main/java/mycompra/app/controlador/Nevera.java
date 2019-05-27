@@ -57,8 +57,17 @@ public class Nevera extends Fragment {
         recycler.addOnItemTouchListener(new RecyclerItemClickListener(getActivity().getApplicationContext(), new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
+
+                Bundle bundle = new Bundle();
+
+                bundle.putString("fragmentAnterior", "Nevera");
+                bundle.putString("idProducto", String.valueOf(listaProductos.get(position).getId()));
+
+                DetalleProdInventario detalleProdInventario = new DetalleProdInventario();
+                detalleProdInventario.setArguments(bundle);
+
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame, new NuevoProductoLista());
+                ft.replace(R.id.frame, detalleProdInventario);
                 ft.commit();
             }
         }));
@@ -73,8 +82,15 @@ public class Nevera extends Fragment {
         buttonNuevoProdNevera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Bundle bundle = new Bundle();
+
+                bundle.putString("fragmentAnterior", "Nevera");
+
+                NuevoProducto nuevoProducto = new NuevoProducto();
+                nuevoProducto.setArguments(bundle);
+
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.frame, new NuevoProducto());
+                fr.replace(R.id.frame, nuevoProducto);
                 fr.commit();
             }
         });

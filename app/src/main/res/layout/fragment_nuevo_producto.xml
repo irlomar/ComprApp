@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NuevoProducto"
+    tools:context=".controlador.NuevoProducto"
     android:orientation="vertical"
     android:layout_marginLeft="25dp"
     android:layout_marginTop="72dp"
@@ -32,18 +32,18 @@
             android:text="Nombre:" />
 
         <EditText
-            android:id="@+id/editText20"
+            android:id="@+id/editTextNombreNuevoProducto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="NombreProducto" />
+            android:hint="Nombre Producto" />
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnAnyadirFragmentNuevoProducto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
