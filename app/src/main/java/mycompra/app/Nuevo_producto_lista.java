@@ -38,7 +38,7 @@ public class Nuevo_producto_lista extends Fragment {
 
         });
 
-        Button btnCancelar = (Button) vista.findViewById(R.id.cancelNuevoProdLista);
+        Button btnCancelar = (Button) vista.findViewById(R.id.cancelarNuevoProdLista);
         btnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

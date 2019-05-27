@@ -1,7 +1,6 @@
 package mycompra.app;
 
-import android.content.Context;
-import android.net.Uri;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,11 +11,10 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NuevoInventario extends Fragment {
+public class Detalle_prod_inventario extends Fragment {
 
 
-
-    public NuevoInventario() {
+    public Detalle_prod_inventario() {
         // Required empty public constructor
     }
 
@@ -25,6 +23,7 @@ public class NuevoInventario extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_nuevo_inventario, container, false);
+        return inflater.inflate(R.layout.fragment_detalle_prod_inventario, container, false);
     }
+
 }
