@@ -1,4 +1,4 @@
-package mycompra.app;
+package mycompra.app.controlador;
 
 
 import android.os.Bundle;
@@ -7,14 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import mycompra.app.R;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Detalle_prod_inventario extends Fragment {
+public class DetalleProdInventario extends Fragment {
 
 
-    public Detalle_prod_inventario() {
+    public DetalleProdInventario() {
         // Required empty public constructor
     }
 

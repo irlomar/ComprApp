@@ -11,11 +11,16 @@ import android.support.v4.widget.DrawerLayout;
 
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.widget.Toast;
 
 import java.io.File;
 
+import mycompra.app.controlador.Configuracion;
+import mycompra.app.controlador.Escanear;
+import mycompra.app.controlador.InfoMensual;
+import mycompra.app.controlador.Inventarios;
+import mycompra.app.controlador.Listas;
+import mycompra.app.controlador.Principal;
+import mycompra.app.controlador.Productos;
 import mycompra.app.dao.CategoriaDAO;
 import mycompra.app.dao.InventarioDAO;
 import mycompra.app.dao.ListaDAO;

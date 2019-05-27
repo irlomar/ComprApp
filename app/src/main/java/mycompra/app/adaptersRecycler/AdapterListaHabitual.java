@@ -1,4 +1,4 @@
-package mycompra.app;
+package mycompra.app.adaptersRecycler;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +9,8 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import mycompra.app.R;
 
 public class AdapterListaHabitual extends RecyclerView.Adapter<AdapterListaHabitual.ViewHolderListaHabitual>  {
 

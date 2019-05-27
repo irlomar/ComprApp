@@ -1,4 +1,4 @@
-package mycompra.app;
+package mycompra.app.adaptersRecycler;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import mycompra.app.R;
 
 public class AdapterProductos extends RecyclerView.Adapter<AdapterProductos.ViewHolderProductos> {
 
