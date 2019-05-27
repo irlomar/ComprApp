@@ -1,4 +1,4 @@
-package mycompra.app;
+package mycompra.app.controlador;
 
 
 import android.os.Bundle;
@@ -9,14 +9,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import mycompra.app.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Principal extends Fragment {
+public class Inventarios extends Fragment {
 
 
-    public Principal() {
+    public Inventarios() {
         // Required empty public constructor
     }
 
@@ -24,39 +26,42 @@ public class Principal extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View vista = inflater.inflate(R.layout.fragment_principal, container, false);
 
-        Button btnListasPrincipal = (Button) vista.findViewById(R.id.btnListPrincipalId);
-        btnListasPrincipal.setOnClickListener(new View.OnClickListener() {
+        View vista = inflater.inflate(R.layout.fragment_inventario, container, false);
+
+        Button btnNevera = (Button) vista.findViewById(R.id.buttonNevera);
+        btnNevera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                getActivity().setTitle("Nevera");
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame,new Listas());
+                ft.replace(R.id.frame, new Nevera());
                 ft.commit();
             }
         });
 
-        Button btnEscanerPrincial = (Button) vista.findViewById(R.id.btnEscPrincId);
-        btnEscanerPrincial.setOnClickListener(new View.OnClickListener() {
+        Button btnCongelador = (Button) vista.findViewById(R.id.buttonCongelador);
+        btnCongelador.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                getActivity().setTitle("Congelador");
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame,new Escanear());
+                ft.replace(R.id.frame, new Congelador());
                 ft.commit();
             }
         });
 
-        Button btnInventarioPrincipal = (Button) vista.findViewById(R.id.btnInventPrincId);
-        btnInventarioPrincipal.setOnClickListener(new View.OnClickListener() {
+        Button btnDespensa = (Button) vista.findViewById(R.id.buttonDespensa);
+        btnDespensa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().setTitle("Inventarios");
+                getActivity().setTitle("Despensa");
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame, new Inventarios());
+                ft.replace(R.id.frame, new Despensa());
                 ft.commit();
             }
         });
+
 
         return vista;
     }

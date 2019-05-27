@@ -1,4 +1,4 @@
-package mycompra.app;
+package mycompra.app.controlador;
 
 
 import android.os.Bundle;
@@ -12,10 +12,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import mycompra.app.R;
+import mycompra.app.adaptersRecycler.AdapterDespensa;
+import mycompra.app.adaptersRecycler.RecyclerItemClickListener;
+import mycompra.app.controlador.NuevaLista;
+import mycompra.app.controlador.NuevoProductoLista;
 import mycompra.app.dao.ProductoDAO;
 import mycompra.app.modelo.Producto;
 
@@ -23,15 +27,15 @@ import mycompra.app.modelo.Producto;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Nevera extends Fragment {
+public class Despensa extends Fragment {
 
-    ArrayList<String> listCantidad;
-    ArrayList<String> listProd;
-    ArrayList<String> listCaducidad;
+    ArrayList<String> listCantidadD;
+    ArrayList<String> listProdD;
+    ArrayList<String> listCaducidadD;
     RecyclerView recycler;
     ArrayList<Producto> listaProductos;
 
-    public Nevera() {
+    public Despensa() {
         // Required empty public constructor
     }
 
@@ -39,14 +43,13 @@ public class Nevera extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.fragment_nevera, container, false);
-
-        recycler = view.findViewById(R.id.RecyclerId);
+        // Inflate the layout for this fragment
+        View vista = inflater.inflate(R.layout.fragment_despensa, container, false);
+        recycler = vista.findViewById(R.id.RecyclerId);
 
         llenarLista();
 
-        AdapterNevera adapter = new AdapterNevera(listCantidad, listProd, listCaducidad);
+        AdapterDespensa adapter = new AdapterDespensa(listCantidadD, listProdD, listCaducidadD);
 
         recycler.setAdapter(adapter);
 
@@ -56,7 +59,7 @@ public class Nevera extends Fragment {
             @Override
             public void onItemClick(View view, int position) {
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame, new Nuevo_producto_lista());
+                ft.replace(R.id.frame, new NuevoProductoLista());
                 ft.commit();
             }
         }));
@@ -67,7 +70,7 @@ public class Nevera extends Fragment {
                 ((LinearLayoutManager) recycler.getLayoutManager()).getOrientation());
         recycler.addItemDecoration(dividerItemDecoration);
 
-        FloatingActionButton buttonNuevoProdNevera = view.findViewById(R.id.buttonNuevoProdNevera);
+        FloatingActionButton buttonNuevoProdNevera = vista.findViewById(R.id.buttonNuevoProdDespensa);
         buttonNuevoProdNevera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,22 +79,25 @@ public class Nevera extends Fragment {
                 fr.commit();
             }
         });
-        return view;
+
+        return vista;
     }
+
 
     private void llenarLista(){
         ProductoDAO productoDAO = new ProductoDAO(getActivity().getApplicationContext());
 
-        listaProductos = productoDAO.getProductoListNevera();
+        listaProductos = productoDAO.getProductoListDespensa();
 
-        listCantidad = new ArrayList<String>();
-        listProd = new ArrayList<String>();
-        listCaducidad = new ArrayList<String>();
+        listCantidadD = new ArrayList<String>();
+        listProdD = new ArrayList<String>();
+        listCaducidadD = new ArrayList<String>();
 
         for(int i = 0; i < listaProductos.size(); i++){
-            listCantidad.add(String.valueOf(listaProductos.get(i).getCantidad()));
-            listProd.add(listaProductos.get(i).getNombre());
-            listCaducidad.add(listaProductos.get(i).getCaducidad());
+            listCantidadD.add(String.valueOf(listaProductos.get(i).getCantidad()));
+            listProdD.add(listaProductos.get(i).getNombre());
+            listCaducidadD.add(listaProductos.get(i).getCaducidad());
         }
     }
+
 }

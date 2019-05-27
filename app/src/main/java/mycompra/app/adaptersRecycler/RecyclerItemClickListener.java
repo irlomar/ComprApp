@@ -1,4 +1,4 @@
-package mycompra.app;
+package mycompra.app.adaptersRecycler;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

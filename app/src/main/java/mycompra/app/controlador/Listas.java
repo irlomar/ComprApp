@@ -1,4 +1,4 @@
-package mycompra.app;
+package mycompra.app.controlador;
 
 
 import android.os.Bundle;
@@ -12,6 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+
+import mycompra.app.R;
+import mycompra.app.adaptersRecycler.AdapterListas;
+import mycompra.app.controlador.NuevaLista;
 
 
 /**

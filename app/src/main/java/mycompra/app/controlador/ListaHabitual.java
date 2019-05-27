@@ -1,7 +1,5 @@
-package mycompra.app;
+package mycompra.app.controlador;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,10 +10,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.CheckBox;
 
 import java.util.ArrayList;
+
+import mycompra.app.R;
+import mycompra.app.adaptersRecycler.AdapterListaHabitual;
+import mycompra.app.controlador.NuevoProductoLista;
 
 
 /**
@@ -63,7 +64,7 @@ public class ListaHabitual extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.frame,new Nuevo_producto_lista());
+                fr.replace(R.id.frame,new NuevoProductoLista());
                 fr.commit();
 
             }

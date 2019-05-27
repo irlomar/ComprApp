@@ -7,7 +7,7 @@
     android:layout_marginTop="72dp"
     android:layout_marginRight="20dp"
     android:orientation="vertical"
-    tools:context=".Detalle_prod_inventario">
+    tools:context=".controlador.DetalleProdInventario">
 
     <TextView
         android:layout_width="match_parent"
