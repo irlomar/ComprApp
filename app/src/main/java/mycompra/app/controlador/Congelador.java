@@ -18,8 +18,6 @@ import java.util.ArrayList;
 import mycompra.app.R;
 import mycompra.app.adaptersRecycler.AdapterCongelador;
 import mycompra.app.adaptersRecycler.RecyclerItemClickListener;
-import mycompra.app.controlador.NuevaLista;
-import mycompra.app.controlador.NuevoProductoLista;
 import mycompra.app.dao.ProductoDAO;
 import mycompra.app.modelo.Producto;
 

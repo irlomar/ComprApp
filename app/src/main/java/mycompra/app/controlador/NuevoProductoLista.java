@@ -10,15 +10,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import mycompra.app.R;
+import mycompra.app.controlador.ListaHabitual;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Configuracion extends Fragment {
+public class NuevoProductoLista extends Fragment {
 
 
-    public Configuracion() {
+    public NuevoProductoLista() {
         // Required empty public constructor
     }
 
@@ -27,28 +28,29 @@ public class Configuracion extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View vista = inflater.inflate(R.layout.fragment_configuracion, container, false);
+        View vista = inflater.inflate(R.layout.fragment_nuevo_producto_lista, container, false);
 
-        Button btnNuevaCategoria = (Button) vista.findViewById(R.id.buttonNuevaCat);
-        btnNuevaCategoria.setOnClickListener(new View.OnClickListener() {
+        Button btnAceptar = (Button) vista.findViewById(R.id.aceptarNuevoProdLista);
+        btnAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame,new NuevaCategoria());
+                ft.replace(R.id.frame,new ListaHabitual());
                 ft.commit();
             }
+
         });
 
-        Button btnNuevaTag = (Button) vista.findViewById(R.id.buttonNuevaTag);
-        btnNuevaTag.setOnClickListener(new View.OnClickListener() {
+        Button btnCancelar = (Button) vista.findViewById(R.id.cancelarNuevoProdLista);
+        btnCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.frame,new NuevoTag());
+                ft.replace(R.id.frame,new ListaHabitual());
                 ft.commit();
             }
-        });
 
+        });
         return vista;
     }
 

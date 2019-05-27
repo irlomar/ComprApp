@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import mycompra.app.R;
-import mycompra.app.adaptersRecycler.AdapterDespensa;
+import mycompra.app.adaptersRecycler.AdapterNevera;
 import mycompra.app.adaptersRecycler.RecyclerItemClickListener;
 import mycompra.app.dao.ProductoDAO;
 import mycompra.app.modelo.Producto;
@@ -25,15 +25,15 @@ import mycompra.app.modelo.Producto;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Despensa extends Fragment {
+public class Nevera extends Fragment {
 
-    ArrayList<String> listCantidadD;
-    ArrayList<String> listProdD;
-    ArrayList<String> listCaducidadD;
+    ArrayList<String> listCantidad;
+    ArrayList<String> listProd;
+    ArrayList<String> listCaducidad;
     RecyclerView recycler;
     ArrayList<Producto> listaProductos;
 
-    public Despensa() {
+    public Nevera() {
         // Required empty public constructor
     }
 
@@ -41,13 +41,14 @@ public class Despensa extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View vista = inflater.inflate(R.layout.fragment_despensa, container, false);
-        recycler = vista.findViewById(R.id.RecyclerId);
+
+        View view = inflater.inflate(R.layout.fragment_nevera, container, false);
+
+        recycler = view.findViewById(R.id.RecyclerId);
 
         llenarLista();
 
-        AdapterDespensa adapter = new AdapterDespensa(listCantidadD, listProdD, listCaducidadD);
+        AdapterNevera adapter = new AdapterNevera(listCantidad, listProd, listCaducidad);
 
         recycler.setAdapter(adapter);
 
@@ -68,7 +69,7 @@ public class Despensa extends Fragment {
                 ((LinearLayoutManager) recycler.getLayoutManager()).getOrientation());
         recycler.addItemDecoration(dividerItemDecoration);
 
-        FloatingActionButton buttonNuevoProdNevera = vista.findViewById(R.id.buttonNuevoProdDespensa);
+        FloatingActionButton buttonNuevoProdNevera = view.findViewById(R.id.buttonNuevoProdNevera);
         buttonNuevoProdNevera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,25 +78,22 @@ public class Despensa extends Fragment {
                 fr.commit();
             }
         });
-
-        return vista;
+        return view;
     }
-
 
     private void llenarLista(){
         ProductoDAO productoDAO = new ProductoDAO(getActivity().getApplicationContext());
 
-        listaProductos = productoDAO.getProductoListDespensa();
+        listaProductos = productoDAO.getProductoListNevera();
 
-        listCantidadD = new ArrayList<String>();
-        listProdD = new ArrayList<String>();
-        listCaducidadD = new ArrayList<String>();
+        listCantidad = new ArrayList<String>();
+        listProd = new ArrayList<String>();
+        listCaducidad = new ArrayList<String>();
 
         for(int i = 0; i < listaProductos.size(); i++){
-            listCantidadD.add(String.valueOf(listaProductos.get(i).getCantidad()));
-            listProdD.add(listaProductos.get(i).getNombre());
-            listCaducidadD.add(listaProductos.get(i).getCaducidad());
+            listCantidad.add(String.valueOf(listaProductos.get(i).getCantidad()));
+            listProd.add(listaProductos.get(i).getNombre());
+            listCaducidad.add(listaProductos.get(i).getCaducidad());
         }
     }
-
 }

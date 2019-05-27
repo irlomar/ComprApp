@@ -15,7 +15,6 @@ import java.util.ArrayList;
 
 import mycompra.app.R;
 import mycompra.app.adaptersRecycler.AdapterListas;
-import mycompra.app.controlador.NuevaLista;
 
 
 /**
