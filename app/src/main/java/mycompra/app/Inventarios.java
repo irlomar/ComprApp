@@ -20,7 +20,6 @@ import android.widget.Toast;
  */
 public class Inventarios extends Fragment {
 
-    NuevoInventario nuevoInventario;
 
     public Inventarios() {
         // Required empty public constructor
