@@ -74,7 +74,7 @@ public class Congelador extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.frame,new NuevaLista());
+                fr.replace(R.id.frame,new NuevoProducto());
                 fr.commit();
             }
         });
